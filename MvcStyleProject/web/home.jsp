@@ -12,6 +12,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>title</h1>
+        <a href="logout.jsp">SignOut</a>
+        <%
+         String uname =(String)session.getAttribute("uname");
+         if (uname == null || uname.trim().equals("")){
+         
+            response.sendRedirect("login.html");
+             
+            }
+            
+        
+        %>
+        <h1>Hello <%=uname%></h1>
+        <h1>Login Sucssesful...</h1>
     </body>
 </html>
